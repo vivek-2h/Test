@@ -2,21 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Verified Branch') {
             steps {
-                echo 'Hello World'
+                echo $GIT_BRANCH
             }
-        }
-        stage('GoodBye') {
-            steps {
-                echo 'GoodBye World'
-            }
-        }
-        stage('pwsh Hello') {
-            steps {
-                powershell label: '', script: 'Write-Output "Hello PowerShell!\''
-            }
-        }
-        
+        }       
     }
 }
